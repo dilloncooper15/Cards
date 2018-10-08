@@ -9,22 +9,22 @@ import "fmt"
 type deck []string
 
 func newDeck() deck {
+	cards := deck{}
+
 	cardSuits := []string{"Clubs", "Diamonds", "Hearts", "Spades"}
 	cardValues := []string{"Ace", "Two", "Three", "Four", "Five", "Six",
 		"Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"}
-	cards := deck{}
 
-	for i := range cardSuits {
-		for m := range cardValues {
-			cards = append(cards, fmt.Sprintf("%v of %v", cardValues[m], cardSuits[i]))
+	for _, suit := range cardSuits {
+		for _, value := range cardValues {
+			cards = append(cards, value+" of "+suit)
 		}
-		cards = append(cards)
 	}
 
 	return cards
 }
 
-func (d deck) print() { //Receiver
+func (d deck) print() {
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
