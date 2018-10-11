@@ -12,6 +12,9 @@ func main() {
 
 	cards.saveToFile("my_cards")
 
-	fmt.Println(newDeckFromFile("my_cards"))
+	// fmt.Println(newDeckFromFile("my_cards"))
 
+	cards.shuffle()
+
+	fmt.Println(cards)
 }
