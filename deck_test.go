@@ -21,18 +21,25 @@ func TestNewDeck(t *testing.T) {
 }
 
 func TestDeal(t *testing.T) {
-	cards := newDeck()
-	hand, remainingDeck := deal(cards, 5)
+	d := newDeck()
+	hand, remainingDeck := deal(d, 5)
 
 	if len(hand) != 5 || len(remainingDeck) != 47 {
-		t.Errorf("Expected handsize to be 5, but got %v. Expected remainingDeck size to be 47, but got %v", len(hand), len(remainingDeck))
+		t.Errorf("Expected handsize to be 5, but got %v. Expected remainingDeck size to be 47, but got %v",
+			len(hand), len(remainingDeck))
 	}
 }
 
-func TestSaveToFile(t *testing.T) {
+func TestSaveToDeckAndNewDeckFromFile(t *testing.T) {
+	removeFile("_decktesting")
+	d := newDeck()
 
-}
+	d.saveToFile("_decktesting")
+	ld := newDeckFromFile("_decktesting")
 
-func TestReadFromFile(t *testing.T) {
+	if len(ld) != 52 {
+		t.Errorf("Expected deck length of 52, but got %v", len(ld))
+	}
 
+	removeFile("_decktesting")
 }
