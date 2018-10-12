@@ -17,4 +17,5 @@ func main() {
 	cards.shuffle()
 
 	fmt.Println(cards)
+	removeFile("my_cards")
 }

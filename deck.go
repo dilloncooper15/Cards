@@ -61,6 +61,13 @@ func (d deck) saveToFile(filename string) error {
 }
 
 /**
+* Removes a file matching the name of the parameter passed in.
+**/
+func removeFile(filename string) error {
+	return os.Remove(filename)
+}
+
+/**
 * Reads in the contents of the file [filename] and returns a deck. If the [filename]
 * cannot be found, an error will be logged and the program will exit with code 1.
 **/
