@@ -52,6 +52,10 @@ func (d deck) toString() string {
 	return strings.Join([]string(d), ",")
 }
 
+func (d deck) printAsFormattedString() string {
+	return strings.Join([]string(d), ", ")
+}
+
 /**
 * A Receiver Function that converts a deck to a byte slice and writes the result
 * to the provided file name passed as a parameter.
