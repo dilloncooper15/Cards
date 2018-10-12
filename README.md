@@ -1,6 +1,7 @@
 # Cards
-_go run main.go deck.go_ -> Runs GO project.
-_go test_ -> Runs all tests.
+_go run main.go deck.go_ -> Runs project.
+
+_go test_ -> Runs all tests in project.
 
 # Useful Functions
 _newDeck()_ -> Generates a standard deck, containing 52 cards.
